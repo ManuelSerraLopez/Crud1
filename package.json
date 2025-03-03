@@ -1,0 +1,24 @@
+{
+  "name": "crud1",
+  "version": "1.0.0",
+  "description": "proyecto sobre dependencias con node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelSerraLopez/Crud1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelSerraLopez/Crud1/issues"
+  },
+  "homepage": "https://github.com/ManuelSerraLopez/Crud1#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
