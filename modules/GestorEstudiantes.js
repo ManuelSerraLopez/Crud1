@@ -92,3 +92,15 @@ export class GestorEstudiantes {
     };
   }
   
+  cantidadAprobadosReprobados(umbral = 60) {
+    const resultados = { aprobados: 0, reprobados: 0 };
+    this.estudiantes.forEach(e => {
+      const notas = Object.values(e.calificaciones || {});
+      notas.forEach(nota => {
+        if (nota >= umbral) resultados.aprobados++;
+        else resultados.reprobados++;
+      });
+    });
+    return resultados;
+  }
+  
