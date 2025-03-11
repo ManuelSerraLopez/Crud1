@@ -104,3 +104,7 @@ export class GestorEstudiantes {
     return resultados;
   }
   
+  totalEstudiantes() {
+    return this.estudiantes.length;
+  }
+  
