@@ -66,4 +66,11 @@ export class GestorEstudiantes {
     });
     return resultados;
   }
+
+  promedioGeneralGrupo(); {
+    const calificacionesTotales = this.estudiantes.flatMap(e => Object.values(e.calificaciones || {}));
+    const promedio = calificacionesTotales.reduce((acc, val) => acc + val, 0) / calificacionesTotales.length;
+    return promedio.toFixed(2);
+  }
+  
   
