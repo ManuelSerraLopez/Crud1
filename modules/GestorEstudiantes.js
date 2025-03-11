@@ -84,7 +84,7 @@ export class GestorEstudiantes {
     return this.promedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
   }
   
-  mejoresYPeoresPorArea(area, cantidad = 2) {
+  mejoresYPeoresPorArea(area, cantidad = 2); {
     const estudiantesArea = this.promedioPorEstudiante().filter(e => e.nivel === area);
     return {
       mejores: estudiantesArea.sort((a, b) => b.promedio - a.promedio).slice(0, cantidad),
@@ -92,7 +92,7 @@ export class GestorEstudiantes {
     };
   }
   
-  cantidadAprobadosReprobados(umbral = 60) {
+  cantidadAprobadosReprobados(umbral = 60); {
     const resultados = { aprobados: 0, reprobados: 0 };
     this.estudiantes.forEach(e => {
       const notas = Object.values(e.calificaciones || {});
@@ -106,5 +106,14 @@ export class GestorEstudiantes {
   
   totalEstudiantes() {
     return this.estudiantes.length;
+  }
+  
+  reporteRendimientoAcademico(); {
+    return {
+      totalEstudiantes: this.totalEstudiantes(),
+      promedioGeneral: this.promedioGeneralGrupo(),
+      mejoresEstudiantes: this.estudiantesConPromedioMayor(85),
+      peoresEstudiantes: this.estudiantesConPromedioMayor(60),
+    };
   }
   
