@@ -84,3 +84,11 @@ export class GestorEstudiantes {
     return this.promedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
   }
   
+  mejoresYPeoresPorArea(area, cantidad = 2) {
+    const estudiantesArea = this.promedioPorEstudiante().filter(e => e.nivel === area);
+    return {
+      mejores: estudiantesArea.sort((a, b) => b.promedio - a.promedio).slice(0, cantidad),
+      peores: estudiantesArea.sort((a, b) => a.promedio - b.promedio).slice(0, cantidad),
+    };
+  }
+  
