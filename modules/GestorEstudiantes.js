@@ -73,4 +73,10 @@ export class GestorEstudiantes {
     return promedio.toFixed(2);
   }
   
+  distribucionPorArea(); {
+    return this.estudiantes.reduce((acc, e) => {
+      acc[e.nivel] = (acc[e.nivel] || 0) + 1;
+      return acc;
+    }, {});
+  }
   
