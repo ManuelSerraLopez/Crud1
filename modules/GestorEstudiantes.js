@@ -80,3 +80,7 @@ export class GestorEstudiantes {
     }, {});
   }
   
+  rankingPorPromedio(); {
+    return this.promedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
+  }
+  
