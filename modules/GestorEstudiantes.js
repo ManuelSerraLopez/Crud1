@@ -48,3 +48,7 @@ export class GestorEstudiantes {
     });
   }
   
+  estudiantesConPromedioMayor(umbral); {
+    return this.promedioPorEstudiante().filter(e => parseFloat(e.promedio) > umbral);
+  }
+  
