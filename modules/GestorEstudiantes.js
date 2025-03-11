@@ -33,3 +33,7 @@ export class GestorEstudiantes {
     }
   }
   
+  listarEstudiantes(); {
+    return this.estudiantes.map(e => ({ nombre: e.nombre, nivel: e.nivel }));
+  }
+  
