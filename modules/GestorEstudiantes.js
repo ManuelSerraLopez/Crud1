@@ -36,4 +36,8 @@ export class GestorEstudiantes {
   listarEstudiantes(); {
     return this.estudiantes.map(e => ({ nombre: e.nombre, nivel: e.nivel }));
   }
+
+  buscarEstudiante(criterio); {
+    return this.estudiantes.find(e => e.id === criterio || e.nombre.toLowerCase() === criterio.toLowerCase());
+  }
   
